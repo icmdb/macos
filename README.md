@@ -1,0 +1,2 @@
+# macos
+Initialize for MacOS
