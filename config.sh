@@ -9,3 +9,4 @@ done
 
 \cp ssh/config  ${HOME}/.ssh/config
 [ -s ${HOME}/.ssh/servers ] || \cp ssh/servers ${HOME}/.ssh/servers
+[ -d /tmp/hosts ] || mkdir -pv /tmp/hosts
