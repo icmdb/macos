@@ -1,0 +1,5 @@
+# ~/.ssh/servers
+#Host hostname ipaddress
+#    HostName ipaddress
+#    User username
+#    Port port

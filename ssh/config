@@ -1,0 +1,31 @@
+# ~/.ssh/config with 600 mode
+Host *
+    UseKeychain yes 
+    AddKeysToAgent yes
+    Compression yes
+    PubkeyAuthentication yes
+
+    ControlMaster auto
+    ControlPersist yes
+    ControlPath /tmp/hosts/%r@%h-%p
+
+    SendEnv LANG LC_ALL=en.US.UTF-8
+    #GSSAPIAuthentication no
+    StrictHostKeyChecking no
+    ServerAliveInterval 60
+    ServerAliveCountMax 360
+    TCPKeepAlive yes
+        
+
+Include ~/.ssh/ssh_config
+
+Host code.aliyun.com
+    Port 22
+    IdentityFile ~/.ssh/code.aliyun.com
+Host github.com
+    Port 22
+    IdentityFile ~/.ssh/github.com
+Host *
+    User root
+    Port 22
+    IdentityFile ~/.ssh/id_rsa
