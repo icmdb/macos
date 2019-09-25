@@ -17,7 +17,7 @@ Host *
     TCPKeepAlive yes
         
 
-Include ~/.ssh/ssh_config
+Include ~/.ssh/servers
 
 Host code.aliyun.com
     Port 22

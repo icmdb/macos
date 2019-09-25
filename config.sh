@@ -8,4 +8,4 @@ do
 done
 
 \cp ssh/config  ${HOME}/.ssh/config
-\cp ssh/servers ${HOME}/.ssh/servers
+[ -s ${HOME}/.ssh/servers ] || \cp ssh/servers ${HOME}/.ssh/servers
