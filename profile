@@ -24,7 +24,7 @@ alias todownload="cd ${HOME}/Downloads"
 alias toapps="cd ${HOME}/Apps"
 alias towork="cd ${HOME}/Work"
 alias github="cd ${HOME}/Work/github.com"
-alias gitlab="cd ${HOME}/Work/gitlab"
+alias icmdb="cd ${HOME}/Work/github.com/icmdb"
 
 # PATH
 export PATH=.:$PATH
