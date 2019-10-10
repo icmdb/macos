@@ -12,7 +12,7 @@
 # install xcode
 xcode-select --install
 
-[ -d "${HOME}/Apps" ] || mkdir -p ${HOME}/Apps/
+[ -d "${HOME}/Apps" ] || mkdir -pv ${HOME}/Apps/
 
 # install brew
 # @TODO
@@ -23,6 +23,7 @@ brew install wget
 # install java 
 
 # install golang
+
 
 # install python
 brew install python
@@ -37,5 +38,6 @@ unzip   -d ~/Apps/ ~/Downloads/apache-maven-3.6.2-bin.zip
 ln -s ~/Apps/apache-maven-3.6.2 ~/Apps/maven
 
 # install kubectl helm
+wget https://get.helm.sh/helm-v3.0.0-beta.3-darwin-amd64.tar.gz
 
 # install terraform
