@@ -75,3 +75,4 @@ ln -s      ~/Apps/apache-maven-3.6.2 ~/Apps/maven
 wget https://get.helm.sh/helm-v3.0.0-beta.3-darwin-amd64.tar.gz
 
 # install terraform
+TF_
