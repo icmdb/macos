@@ -1,4 +1,8 @@
 # ~/.profile
+#
+
+# history format
+HISTTIMEFORMAT="[%d/%m/%y %T] "
 
 # prompt
 cmd_prompt='$'
