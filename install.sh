@@ -14,7 +14,7 @@
 
 touch ~/.userfile
 
-[ -d "${HOME}/Apps" ]            || mkdir -pv ${HOME}/Apps/
+[ -d "${HOME}/Apps/bin" ]        || mkdir -pv ${HOME}/Apps/bin
 [ -d "${HOME}/Work/github.com" ] || mkdir -pv ${HOME}/Work/github.com/
 
 # install xcode
@@ -76,3 +76,14 @@ wget https://get.helm.sh/helm-v3.0.0-beta.3-darwin-amd64.tar.gz
 
 # install terraform
 TF_
+
+# Sublime
+#   https://www.sublimetext.com/docs/3/osx_command_line.html
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/Apps/bin
+
+# VSCode
+#   https://code.visualstudio.com/docs/setup/mac
+grep 'Visual Studio' ~/.userfile || cat << EOF >> ~/.userfile
+# Add Visual Studio Code (code)
+export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+EOF
