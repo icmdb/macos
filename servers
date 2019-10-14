@@ -1,0 +1,13 @@
+# ~/.ssh/servers
+#
+#Host jumpserver ipaddress
+#    HostName ipaddress
+#    User username
+#    Port port
+#    IdentityFile ~/.ssh/id_rsa
+#Host hostname ipaddress
+#    HostName ipaddress
+#    User username
+#    Port port
+#    IdentityFile ~/.ssh/id_rsa
+#    ProxyCommand ssh jumpserver -q -W %h:%p
