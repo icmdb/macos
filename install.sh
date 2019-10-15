@@ -61,6 +61,19 @@ EOL
 #pip install virtualenv
 
 # install golang
+#       https://golang.org/dl/
+#       https://golang.org/doc/install/source
+#git clone https://go.googlesource.com/go ~/Work/github.com/golang/go
+#cd ~/Work/github.com/golang/go
+#git checkout go1.13.1
+#. ~/.profile
+#export GOROOT_BOOTSTRAP=~/Apps/go1.13.1
+#mkdir -p ${GOROOT_BOOTSTRAP}
+#ln -s ~/Apps/go1.13.1 ~/Apps/go
+#./all.bash
+## from package
+wget -P ~/Downloads/ https://dl.google.com/go/go1.13.1.darwin-amd64.pkg
+open ~/Downloads/go1.13.1.darwin-amd64.pkg
 
 # install node
 
@@ -82,8 +95,8 @@ TF_
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/Apps/bin
 
 # VSCode
-#   https://code.visualstudio.com/docs/setup/mac
 grep 'Visual Studio' ~/.userfile || cat << EOF >> ~/.userfile
 # Add Visual Studio Code (code)
+#   https://code.visualstudio.com/docs/setup/mac
 export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 EOF

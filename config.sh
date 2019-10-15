@@ -9,7 +9,7 @@ touch ${HOME}/.userfile
 [ -s ${HOME}/.ssh/servers ] || \cp ssh/servers ${HOME}/.ssh/servers
 [ -d /tmp/hosts ] || mkdir -pv /tmp/hosts
 
-for conf in $(ls | grep -v "LICENSE\|.md\|.sh\|ssh\|Z")
+for conf in $(ls | grep -v "LICENSE\|.md\|.sh\|ssh\|Z\|ansible")
 do
     echo ln -s $(pwd)/${conf} ${HOME}/.${conf}
     [ -L ${HOME}/.${conf} ] || ln -s $(pwd)/${conf} ${HOME}/.${conf}

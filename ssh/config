@@ -1,8 +1,9 @@
 # ~/.ssh/config with 600 mode
 Host *
     UseKeychain yes 
-    AddKeysToAgent yes
     Compression yes
+    ForwardAgent yes
+    AddKeysToAgent yes
     PubkeyAuthentication yes
 
     ControlMaster auto
@@ -16,6 +17,10 @@ Host *
     ServerAliveCountMax 360
     TCPKeepAlive yes
         
+#Host *
+#    User root
+#    Port 22
+#    IdentityFile ~/.ssh/id_rsa
 
 Include ~/.ssh/servers
 
@@ -25,7 +30,3 @@ Host code.aliyun.com
 Host github.com
     Port 22
     IdentityFile ~/.ssh/github.com
-Host *
-    User root
-    Port 22
-    IdentityFile ~/.ssh/id_rsa
