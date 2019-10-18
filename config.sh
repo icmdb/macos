@@ -2,6 +2,8 @@
 
 #set -x
 
+OS_NAME="$(uname -s)"
+
 touch ${HOME}/.userfile
 
 [ -d ${HOME}/.ssh/ ] || mkdir -o ${HOME}/.ssh/
@@ -15,5 +17,22 @@ do
     [ -L ${HOME}/.${conf} ] || ln -s $(pwd)/${conf} ${HOME}/.${conf}
 done
 
+mac_config() {
+    defaults write -g ApplePressAndHoldEnabled -bool false
 
+    mkdir -pv /Users/$(whoami)/Documents/Screenshots
+    defaults write com.apple.screencapture location /Users/$(whoami)/Documents/Screenshots
+}
 
+linux_config() {
+    pass
+}
+
+case "${OS_NAME}" in 
+    Darwin)
+        mac_config;;
+        break
+    Linux)
+        linux_cofnig;;
+        break
+esac
