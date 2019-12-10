@@ -2,14 +2,14 @@
 
 #set -x
 
-OS_NAME="$(uname -s)"
+UNAME_S="$(uname -s)"
 
 touch ${HOME}/.userfile
 
-[ -d ${HOME}/.ssh/ ] || mkdir -o ${HOME}/.ssh/
-[ -L ${HOME}/.ssh/config ] || ln -s $(pwd)/ssh/config ${HOME}/.ssh/config
-[ -s ${HOME}/.ssh/servers ] || \cp ssh/servers ${HOME}/.ssh/servers
-[ -d /tmp/hosts ] || mkdir -pv /tmp/hosts
+[ -d /tmp/hosts ]              || mkdir -pv /tmp/hosts
+[ -d ${HOME}/.ssh/ ]           || mkdir -pv ${HOME}/.ssh/
+[ -d ${HOME}/.ssh/ssh.conf.d ] || mkdir -pv ${HOME}/.ssh/ssh.conf.d/
+[ -f ${HOME}/.ssh/config ]     || ln -s $(pwd)/ssh/config ${HOME}/.ssh/config
 
 for conf in $(ls | grep -v "LICENSE\|.md\|.sh\|ssh\|Z\|ansible")
 do
@@ -28,11 +28,11 @@ linux_config() {
     pass
 }
 
-case "${OS_NAME}" in 
+case "${UNAME_S}" in 
     Darwin)
-        mac_config;;
-        break
+        mac_config
+        ;;
     Linux)
-        linux_cofnig;;
-        break
+        linux_cofnig
+        ;;
 esac

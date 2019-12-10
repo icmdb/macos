@@ -2,7 +2,7 @@
 #
 
 # history format
-HISTTIMEFORMAT="[%d/%m/%y %T] "
+HISTTIMEFORMAT="[%d/%m/%Y %T%z] "
 
 # prompt
 cmd_prompt='$'
@@ -15,7 +15,7 @@ alias ls='ls -G'
 alias ll='ls -l'
 alias grep='grep --color'
 
-# function
+# functions
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \(\1\)/'
 }
@@ -26,9 +26,9 @@ tag-commit() {
 # path
 alias todownload="cd ${HOME}/Downloads"
 alias toapps="cd ${HOME}/Apps"
-alias towork="cd ${HOME}/Work"
-alias github="cd ${HOME}/Work/github.com"
-alias icmdb="cd ${HOME}/Work/github.com/icmdb"
+alias towork="cd ${HOME}/work"
+alias github="cd ${HOME}/github.com"
+alias icmdb="cd ${HOME}/github.com/icmdb"
 
 # PATH
 export PATH=.:$PATH
@@ -57,10 +57,11 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 #      Golang
 # -----------------------------------------
 #[ -s ~/.gorc ] && . ~/.gorc
-[ -d ~/Work/go/src ]     || mkdir -p ~/Work/go/src
-[ -d ~/Work/github.com ] || mkdir -p ~/Work/github.com
+[ -d ~/go/src ]            || mkdir -p ~/go/src
+[ -d ~/github.com ]        || mkdir -p ~/github.com
+[ -L ~/go/src/github.com ] || ln -s ~/github.com ~/go/src/
 export GOROOT=/usr/local/go
-export GOPATH="${HOME}/Work/go"
+export GOPATH="${HOME}/go"
 export GOBIN="${GOPATH}/bin"
 export PATH=$PATH:$GOROOT/bin:$GOBIN
 
